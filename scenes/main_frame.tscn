@@ -3867,5 +3867,5 @@ autoplay = "shop"
 frame_progress = 0.33326
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_8n356")]
-position = Vector2(61, 554)
-scale = Vector2(3, 3)
+position = Vector2(32, 570)
+scale = Vector2(2.5, 2.5)
