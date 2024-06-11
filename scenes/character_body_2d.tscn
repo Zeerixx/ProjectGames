@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://olbqc4oqq37u"]
+
+[ext_resource type="Texture2D" uid="uid://d3l3ejbl8t5ry" path="res://AssetsDownload/Tiny RPG Character Asset Pack v1.02 -Free Soldier&Orc/Soldier/Soldier/Soldier-Idle.png" id="1_ghdg5"]
+
+[sub_resource type="GDScript" id="GDScript_o0xx7"]
+script/source = "extends CharacterBody2D
+
+var Is_Left = velocity.x < 0
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"JUMP\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis(\"LEFT\", \"RIGHT\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	move_and_slide()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ywjg"]
+atlas = ExtResource("1_ghdg5")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3fju"]
+atlas = ExtResource("1_ghdg5")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_merfp"]
+atlas = ExtResource("1_ghdg5")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggb6e"]
+atlas = ExtResource("1_ghdg5")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q17k1"]
+atlas = ExtResource("1_ghdg5")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37dlo"]
+atlas = ExtResource("1_ghdg5")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yo70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ywjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3fju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_merfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggb6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q17k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37dlo")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwi4e"]
+size = Vector2(16, 17)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = SubResource("GDScript_o0xx7")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8yo70")
+animation = &"IDLE"
+autoplay = "IDLE"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1.5)
+shape = SubResource("RectangleShape2D_kwi4e")
+
+[node name="Camera2D" type="Camera2D" parent="."]
