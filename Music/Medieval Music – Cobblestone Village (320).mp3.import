@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdmsfpfxdjpni"
+path="res://.godot/imported/Medieval Music – Cobblestone Village (320).mp3-4cf775e68a9ac104863097d4663e5907.mp3str"
+
+[deps]
+
+source_file="res://Music/Medieval Music – Cobblestone Village (320).mp3"
+dest_files=["res://.godot/imported/Medieval Music – Cobblestone Village (320).mp3-4cf775e68a9ac104863097d4663e5907.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
