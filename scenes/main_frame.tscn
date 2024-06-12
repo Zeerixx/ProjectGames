@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhcvdbi7k36kn"]
+[gd_scene load_steps=19 format=3 uid="uid://dhcvdbi7k36kn"]
 
 [ext_resource type="Texture2D" uid="uid://d1aohoix3jov2" path="res://AssetsDownload/oak_woods_v1.0/background/background_layer_1.png" id="1_uo7s3"]
 [ext_resource type="Texture2D" uid="uid://dnkp3831o5g0b" path="res://AssetsDownload/oak_woods_v1.0/background/background_layer_2.png" id="2_ncquj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c2n1s36w7fyym" path="res://AssetsDownload/oak_woods_v1.0/oak_woods_tileset.png" id="5_vpoj7"]
 [ext_resource type="Texture2D" uid="uid://ctvwhmkrplt2j" path="res://AssetsDownload/oak_woods_v1.0/decorations/shop_anim.png" id="6_vh6g8"]
 [ext_resource type="PackedScene" uid="uid://olbqc4oqq37u" path="res://scenes/character_body_2d.tscn" id="7_8n356"]
+[ext_resource type="AudioStream" uid="uid://cdmsfpfxdjpni" path="res://Music/Medieval Music – Cobblestone Village (320).mp3" id="8_i3sxi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvnsj"]
 texture = ExtResource("4_y7npq")
@@ -3871,3 +3872,7 @@ position = Vector2(0, -81)
 scale = Vector2(3.61562, 4.41111)
 texture = ExtResource("3_o6ysc")
 centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_i3sxi")
+autoplay = true
