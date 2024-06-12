@@ -3842,12 +3842,14 @@ autoplay = "shop"
 frame_progress = 0.33326
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_8n356")]
-position = Vector2(32, 570)
+texture_filter = 1
+position = Vector2(-1298, -141)
 scale = Vector2(2.5, 2.5)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
@@ -3856,6 +3858,7 @@ texture = ExtResource("1_uo7s3")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
 motion_scale = Vector2(0.5, 0)
 motion_mirroring = Vector2(1080, 0)
 
@@ -3865,6 +3868,7 @@ texture = ExtResource("2_ncquj")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
 motion_mirroring = Vector2(1080, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
