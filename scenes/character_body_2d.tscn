@@ -242,5 +242,6 @@ position = Vector2(-2, -1.5)
 shape = SubResource("RectangleShape2D_kwi4e")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 640
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
