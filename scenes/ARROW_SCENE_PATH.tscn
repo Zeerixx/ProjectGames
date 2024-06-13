@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://clgaw4g3ymkrp"]
+
+[ext_resource type="Texture2D" uid="uid://bsu8agwqw0tty" path="res://AssetsDownload/oak_woods_v1.0/decorations/rock_1.png" id="1_aqsox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m18s0"]
+size = Vector2(20, 10)
+
+[node name="ArrowScenePath" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m18s0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aqsox")
