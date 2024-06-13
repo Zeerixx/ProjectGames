@@ -17,11 +17,6 @@ var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
 var is_attacking = false
 
 func _ready():
-	if sprite == null:
-		print(\"Error: AnimatedSprite2D node not found. Please check the path.\")
-	else:
-		print(\"AnimatedSprite2D node found successfully.\")
-	
 	sprite.connect(\"animation_finished\", self._on_AnimatedSprite2D_animation_finished)
 
 func _physics_process(delta):
