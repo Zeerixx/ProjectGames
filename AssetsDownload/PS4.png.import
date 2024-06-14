@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgwu2qgpulvd2"
-path="res://.godot/imported/1 (30).png-d9c02a5b20f89e2dd98048111ffc165e.ctex"
+uid="uid://ch78caddft83"
+path="res://.godot/imported/PS4.png-56934b19ec770c9b06cb5b938a094226.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsDownload/1 (30).png"
-dest_files=["res://.godot/imported/1 (30).png-d9c02a5b20f89e2dd98048111ffc165e.ctex"]
+source_file="res://AssetsDownload/PS4.png"
+dest_files=["res://.godot/imported/PS4.png-56934b19ec770c9b06cb5b938a094226.ctex"]
 
 [params]
 

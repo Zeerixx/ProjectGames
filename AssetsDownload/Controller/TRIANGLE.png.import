@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxfobgh2h37xr"
-path="res://.godot/imported/Arrows_pack.png-fb1099aff2078d0cff0c39bfd7331ef7.ctex"
+uid="uid://dem61utkhy3u4"
+path="res://.godot/imported/TRIANGLE.png-063732f67431c899e267d93a1e2dab07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsDownload/Arrows_pack.png"
-dest_files=["res://.godot/imported/Arrows_pack.png-fb1099aff2078d0cff0c39bfd7331ef7.ctex"]
+source_file="res://AssetsDownload/Controller/TRIANGLE.png"
+dest_files=["res://.godot/imported/TRIANGLE.png-063732f67431c899e267d93a1e2dab07.ctex"]
 
 [params]
 
