@@ -1,16 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://olbqc4oqq37u"]
+[gd_scene load_steps=45 format=3 uid="uid://olbqc4oqq37u"]
 
 [ext_resource type="Texture2D" uid="uid://7l7rwcxw01ul" path="res://AssetsDownload/Tiny RPG Character Asset Pack v1.02 -Free Soldier&Orc/Soldier/Soldier/Soldier-Attack01.png" id="1_e68ce"]
 [ext_resource type="Texture2D" uid="uid://d3l3ejbl8t5ry" path="res://AssetsDownload/Tiny RPG Character Asset Pack v1.02 -Free Soldier&Orc/Soldier/Soldier/Soldier-Idle.png" id="1_ghdg5"]
 [ext_resource type="Texture2D" uid="uid://dkxvn8ifsmi16" path="res://AssetsDownload/Tiny RPG Character Asset Pack v1.02 -Free Soldier&Orc/Soldier/Soldier/Soldier-Attack02.png" id="2_kil62"]
 [ext_resource type="Texture2D" uid="uid://dttely58hxtqm" path="res://AssetsDownload/Tiny RPG Character Asset Pack v1.02 -Free Soldier&Orc/Soldier/Soldier/Soldier-Walk.png" id="2_py0n1"]
 [ext_resource type="Texture2D" uid="uid://3g8sx3j4teyn" path="res://AssetsDownload/Tiny RPG Character Asset Pack v1.02 -Free Soldier&Orc/Soldier/Soldier/Soldier-Attack03.png" id="3_ns1vr"]
-[ext_resource type="Texture2D" uid="uid://ccw4n8hcp1777" path="res://AssetsDownload/Controller/LEFT.png" id="6_4mn86"]
-[ext_resource type="Texture2D" uid="uid://dkiyq42h3dapf" path="res://AssetsDownload/Controller/RIGHT.png" id="7_oun82"]
-[ext_resource type="Texture2D" uid="uid://dem61utkhy3u4" path="res://AssetsDownload/Controller/TRIANGLE.png" id="8_nmmlo"]
-[ext_resource type="Texture2D" uid="uid://be3ggs2j5j77r" path="res://AssetsDownload/Controller/RECTANGLE.png" id="9_tyhj3"]
-[ext_resource type="Texture2D" uid="uid://co638e11w4vl1" path="res://AssetsDownload/Controller/X.png" id="10_c3rxd"]
-[ext_resource type="Texture2D" uid="uid://cvnd4petv2pc1" path="res://AssetsDownload/Controller/CIRCLE.png" id="11_2i5lq"]
+[ext_resource type="PackedScene" uid="uid://c5qnqr4io8x4" path="res://scenes/mobile_controls.tscn" id="6_noawo"]
 
 [sub_resource type="GDScript" id="GDScript_o0xx7"]
 script/source = "extends CharacterBody2D
@@ -44,18 +39,6 @@ func _ready():
 	else:
 		print(\"Arrow scene preloaded successfully.\")
 
-	# Connect buttons to functions
-	$Button.connect(\"pressed\", self._on_button_pressed)
-	$Button.connect(\"released\", self._on_button_released)
-	$Button2.connect(\"pressed\", self._on_button_2_pressed)
-	$Button2.connect(\"released\", self._on_button_2_released)
-	$Button3.connect(\"pressed\", self._on_button_3_pressed)
-	$Button4.connect(\"pressed\", self._on_button_4_pressed)
-	$Button4.connect(\"released\", self._on_button_4_released)
-	$Button5.connect(\"pressed\", self._on_button_5_pressed)
-	$Button5.connect(\"released\", self._on_button_5_released)
-	$Button6.connect(\"pressed\", self._on_button_6_pressed)
-	$Button6.connect(\"released\", self._on_button_6_released)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -81,7 +64,7 @@ func _physics_process(delta):
 		is_attacking = true
 		sprite.play(\"ATTACK3\")
 		velocity.x = 0
-		attack3 = false  # Reset attack3
+		attack3 = false  # Reset attack
 
 	if not is_attacking:
 		var direction = Input.get_axis(\"LEFT\", \"RIGHT\")
@@ -107,7 +90,10 @@ func _physics_process(delta):
 			if velocity.x == 0:
 				sprite.play(\"IDLE\")
 
+
 	move_and_slide()
+	
+	
 
 func _on_AnimatedSprite2D_animation_finished():
 	is_attacking = false
@@ -151,39 +137,6 @@ func shoot_arrow():
 	else:
 		print(\"Error: Arrow node does not have a valid method to apply movement.\")
 
-# Button functions
-func _on_button_pressed():
-	move_left = true
-
-func _on_button_2_pressed():
-	move_right = true
-
-func _on_button_3_pressed():
-	jump = true
-
-func _on_button_4_pressed():
-	attack1 = true
-
-func _on_button_5_pressed():
-	attack2 = true
-
-func _on_button_6_pressed():
-	attack3 = true
-
-func _on_button_released():
-	move_left = false
-
-func _on_button_2_released():
-	move_right = false
-
-func _on_button_4_released():
-	attack1 = false
-
-func _on_button_5_released():
-	attack2 = false
-
-func _on_button_6_released():
-	attack3 = false
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57btr"]
@@ -483,47 +436,6 @@ limit_top = -80
 limit_right = 2239
 limit_bottom = 640
 
-[node name="Button" type="Button" parent="."]
-offset_left = 370.0
-offset_top = 256.0
-offset_right = 432.0
-offset_bottom = 314.0
-action_mode = 0
-icon = ExtResource("6_4mn86")
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 445.0
-offset_top = 252.0
-offset_right = 507.0
-offset_bottom = 310.0
-icon = ExtResource("7_oun82")
-
-[node name="Button3" type="Button" parent="."]
-offset_left = 691.0
-offset_top = 220.0
-offset_right = 715.0
-offset_bottom = 244.0
-icon = ExtResource("8_nmmlo")
-
-[node name="Button4" type="Button" parent="."]
-offset_left = 664.0
-offset_top = 260.0
-offset_right = 688.0
-offset_bottom = 284.0
-icon = ExtResource("9_tyhj3")
-
-[node name="Button5" type="Button" parent="."]
-offset_left = 700.0
-offset_top = 310.0
-offset_right = 724.0
-offset_bottom = 335.0
-icon = ExtResource("10_c3rxd")
-
-[node name="Button6" type="Button" parent="."]
-offset_left = 725.0
-offset_top = 262.0
-offset_right = 749.0
-offset_bottom = 286.0
-icon = ExtResource("11_2i5lq")
+[node name="MobileControls" parent="." instance=ExtResource("6_noawo")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

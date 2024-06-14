@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5qnqr4io8x4"]
+
+[ext_resource type="Texture2D" uid="uid://b8dfvdeh30u1c" path="res://AssetsDownload/Controller/ArrowMove.png" id="1_p624i"]
+[ext_resource type="Texture2D" uid="uid://d3kluks6f1xqy" path="res://AssetsDownload/Controller/ButtonSkill1.png" id="2_pk5vd"]
+[ext_resource type="Texture2D" uid="uid://bsyr0wisx7eka" path="res://AssetsDownload/Controller/ButtonSkill2.png" id="3_alern"]
+[ext_resource type="Texture2D" uid="uid://j7aacbd3lpqp" path="res://AssetsDownload/Controller/ButtonSkillBow.png" id="4_1pafy"]
+
+[node name="MobileControls" type="CanvasLayer"]
+
+[node name="Left" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(195, 696)
+rotation = 3.14159
+scale = Vector2(2.41762, 2.46282)
+texture_normal = ExtResource("1_p624i")
+action = "game_left"
+
+[node name="Right" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(190, 539)
+scale = Vector2(2.418, 2.54)
+texture_normal = ExtResource("1_p624i")
+action = "game_left"
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(918, 706)
+rotation = -1.5708
+scale = Vector2(1.78, 1.87)
+texture_normal = ExtResource("1_p624i")
+action = "game_left"
+
+[node name="Attack1" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(589, 593)
+scale = Vector2(1.78, 1.87)
+texture_normal = ExtResource("2_pk5vd")
+action = "game_left"
+
+[node name="Attack2" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(694, 594)
+scale = Vector2(1.78, 1.87)
+texture_normal = ExtResource("3_alern")
+action = "game_left"
+
+[node name="Attack3" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(801, 592)
+rotation = 0.0174533
+scale = Vector2(1.7805, 1.83991)
+texture_normal = ExtResource("4_1pafy")
+action = "game_left"
