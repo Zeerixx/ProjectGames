@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://j7aacbd3lpqp" path="res://AssetsDownload/Controller/ButtonSkillBow.png" id="4_1pafy"]
 
 [node name="MobileControls" type="CanvasLayer"]
+visible = false
 
 [node name="Left" type="TouchScreenButton" parent="."]
 texture_filter = 1

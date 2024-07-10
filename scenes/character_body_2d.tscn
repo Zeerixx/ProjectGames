@@ -137,6 +137,8 @@ func shoot_arrow():
 	else:
 		print(\"Error: Arrow node does not have a valid method to apply movement.\")
 
+func die():
+	get_tree().reload_current_scene()
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57btr"]
@@ -413,7 +415,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwi4e"]
-size = Vector2(14, 18)
+size = Vector2(12, 18)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = SubResource("GDScript_o0xx7")
@@ -425,7 +427,7 @@ sprite_frames = SubResource("SpriteFrames_8yo70")
 animation = &"ATTACK3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(542, 284)
+position = Vector2(543, 284)
 shape = SubResource("RectangleShape2D_kwi4e")
 
 [node name="Camera2D" type="Camera2D" parent="."]

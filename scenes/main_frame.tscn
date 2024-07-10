@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://dhcvdbi7k36kn"]
+[gd_scene load_steps=27 format=3 uid="uid://dhcvdbi7k36kn"]
 
+[ext_resource type="PackedScene" uid="uid://c1qmggsfnrwsp" path="res://scenes/trap.tscn" id="1_pd10f"]
 [ext_resource type="Texture2D" uid="uid://d1aohoix3jov2" path="res://AssetsDownload/oak_woods_v1.0/background/background_layer_1.png" id="1_uo7s3"]
 [ext_resource type="Texture2D" uid="uid://dnkp3831o5g0b" path="res://AssetsDownload/oak_woods_v1.0/background/background_layer_2.png" id="2_ncquj"]
 [ext_resource type="Texture2D" uid="uid://bdcntd1yb3fiu" path="res://AssetsDownload/oak_woods_v1.0/background/background_layer_3.png" id="3_o6ysc"]
@@ -3839,6 +3840,11 @@ animations = [{
 }]
 
 [node name="main_frame" type="Node2D"]
+
+[node name="Trap" parent="." instance=ExtResource("1_pd10f")]
+position = Vector2(315, 493)
+collision_layer = 2
+collision_mask = 1
 
 [node name="TileMap3" type="TileMap" parent="."]
 texture_filter = 1
