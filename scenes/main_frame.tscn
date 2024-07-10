@@ -3842,7 +3842,7 @@ animations = [{
 [node name="main_frame" type="Node2D"]
 
 [node name="Trap" parent="." instance=ExtResource("1_pd10f")]
-position = Vector2(315, 493)
+position = Vector2(323, 494)
 collision_layer = 2
 collision_mask = 1
 
